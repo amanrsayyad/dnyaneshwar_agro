@@ -196,6 +196,9 @@ const Hero = ({ value }) => {
 export default Hero;
 
 const HeroMain = styled.div`
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   .grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
