@@ -2,8 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { BsArrowRight } from "react-icons/bs";
 import { AboutMain, AboutGrid, AboutCard } from "../styles/CompoStyles";
-import img2 from "../assets/img2.jpeg";
-import img3 from "../assets/img3.jpeg";
 import profile from "../assets/profile.jpeg";
 
 const AboutCompo = ({ value }) => {
@@ -30,7 +28,7 @@ const AboutCompo = ({ value }) => {
                 शेतकऱ्याला त्याच्या शेतीसाठी मदत करू शकेल अशा सेवा पुरवते, आम्ही
                 उत्कृष्ट आणि स्वस्त ट्रॅक्टर उपकरणे आणि बरेच काही देतो.
               </p>
-              <Link to="#" className="btn flex-center">
+              <Link to="/about-us" className="btn flex-center">
                 अधिक जाणून घ्या <BsArrowRight className="iconRight" />
               </Link>
             </>
@@ -48,7 +46,7 @@ const AboutCompo = ({ value }) => {
                 with his farming, we give excellent and affordable tractor
                 equipments and many more.
               </p>
-              <Link to="#" className="btn flex-center">
+              <Link to="/about-us" className="btn flex-center">
                 Learn More <BsArrowRight className="iconRight" />
               </Link>
             </>

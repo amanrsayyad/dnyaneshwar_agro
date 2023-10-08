@@ -10,6 +10,7 @@ import { EffectFade } from "swiper/modules";
 import slider1 from "../assets/slider1.jpeg";
 import slider2 from "../assets/slider2.jpeg";
 import slider3 from "../assets/slider3.jpeg";
+import { Link } from "react-router-dom";
 
 const Hero = ({ value }) => {
   useEffect(() => {
@@ -33,9 +34,13 @@ const Hero = ({ value }) => {
                     रोटाव्हेटर, ट्रॅक्टर ट्रॉली, चाफ कटरच्या विस्तृत श्रेणीचे
                     आघाडीचे घाऊक व्यापारी
                   </p>
-                  <div className="btn flex-center"  data-aos="fade-right">
+                  <Link
+                    to="/equipment"
+                    className="btn flex-center"
+                    data-aos="fade-right"
+                  >
                     अधिक जाणून घ्या <BsArrowRight className="iconRight" />
-                  </div>
+                  </Link>
                 </div>
                 <div className="imgDiv">
                   <img src={slider1} alt="" />
@@ -55,9 +60,13 @@ const Hero = ({ value }) => {
                     रोटाव्हेटर, ट्रॅक्टर ट्रॉली, चाफ कटरच्या विस्तृत श्रेणीचे
                     आघाडीचे घाऊक व्यापारी
                   </p>
-                  <div className="btn flex-center" data-aos="fade-right">
+                  <Link
+                    to="/equipment"
+                    className="btn flex-center"
+                    data-aos="fade-right"
+                  >
                     अधिक जाणून घ्या <BsArrowRight className="iconRight" />
-                  </div>
+                  </Link>
                 </div>
                 <div className="imgDiv">
                   <img src={slider2} alt="" />
@@ -77,9 +86,13 @@ const Hero = ({ value }) => {
                     रोटाव्हेटर, ट्रॅक्टर ट्रॉली, चाफ कटरच्या विस्तृत श्रेणीचे
                     आघाडीचे घाऊक व्यापारी
                   </p>
-                  <div className="btn flex-center" data-aos="fade-right">
+                  <Link
+                    to="/equipment"
+                    className="btn flex-center"
+                    data-aos="fade-right"
+                  >
                     अधिक जाणून घ्या <BsArrowRight className="iconRight" />
-                  </div>
+                  </Link>
                 </div>
                 <div className="imgDiv">
                   <img src={slider3} alt="" />
@@ -103,9 +116,13 @@ const Hero = ({ value }) => {
                     Leading Wholesaler Trader of wide range of Rotavator,Tractor
                     Trolly,Chaff Cutter & Tractor equipment
                   </p>
-                  <div className="btn flex-center" data-aos="fade-right">
+                  <Link
+                    to="/equipment"
+                    className="btn flex-center"
+                    data-aos="fade-right"
+                  >
                     Learn More <BsArrowRight className="iconRight" />
-                  </div>
+                  </Link>
                 </div>
                 <div className="imgDiv">
                   <img src={slider1} alt="" />
@@ -125,9 +142,13 @@ const Hero = ({ value }) => {
                     Leading Wholesaler Trader of wide range of Rotavator,Tractor
                     Trolly,Chaff Cutter & Tractor equipment
                   </p>
-                  <div className="btn flex-center" data-aos="fade-right">
+                  <Link
+                    to="/equipment"
+                    className="btn flex-center"
+                    data-aos="fade-right"
+                  >
                     Learn More <BsArrowRight className="iconRight" />
-                  </div>
+                  </Link>
                 </div>
                 <div className="imgDiv">
                   <img src={slider2} alt="" />
@@ -147,9 +168,13 @@ const Hero = ({ value }) => {
                     Leading Wholesaler Trader of wide range of Rotavator,Tractor
                     Trolly,Chaff Cutter & Tractor equipment
                   </p>
-                  <div className="btn flex-center" data-aos="fade-right">
+                  <Link
+                    to="/equipment"
+                    className="btn flex-center"
+                    data-aos="fade-right"
+                  >
                     Learn More <BsArrowRight className="iconRight" />
-                  </div>
+                  </Link>
                 </div>
                 <div className="imgDiv">
                   <img src={slider3} alt="" />
