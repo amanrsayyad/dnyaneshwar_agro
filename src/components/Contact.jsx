@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { BsArrowRight } from "react-icons/bs";
 import ReactWhatsapp from "react-whatsapp";
-import { toast } from "react-toastify";
 import { CATEGORIES, CATEGORIES2 } from "../utils/Data";
 
 const Contact = ({ value }) => {
@@ -14,28 +13,10 @@ const Contact = ({ value }) => {
   const data = [name, phone, subject, enquiry];
 
   const ContactFormMar = () => {
-    if (name === "") {
-      toast.error("पूर्ण नाव प्रविष्ट करा");
-    }
-    if (phone.length > 10 || phone === "") {
-      toast.error("एक वैध फोन नंबर प्रविष्ट करा");
-    }
-    if (subject === "") {
-      toast.error("एक विषय प्रविष्ट करा");
-    }
     localStorage.setItem("dataKey", JSON.stringify(data));
   };
 
   const ContactFormEng = () => {
-    if (name === "") {
-      toast.error("Enter your Full Name");
-    }
-    if (phone.length > 10 || phone === "") {
-      toast.error("Enter a valid mobile name");
-    }
-    if (subject === "") {
-      toast.error("Enter a Subject");
-    }
     localStorage.setItem("dataKey", JSON.stringify(data));
   };
 

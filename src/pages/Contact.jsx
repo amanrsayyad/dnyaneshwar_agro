@@ -1,14 +1,29 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import { Container } from "../styles/HeaderStyles";
 import { IoLocationOutline, IoCallOutline, BiTimeFive } from "../utils/Icon";
 import Banner from "../components/Banner";
 import img5 from "../assets/img5.jpeg";
-import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { BsArrowRight } from "react-icons/bs";
+import ReactWhatsapp from "react-whatsapp";
+import { CATEGORIES, CATEGORIES2 } from "../utils/Data";
 
 const Contact = ({ value }) => {
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [subject, setSubject] = useState("");
+  const [enquiry, setEnquiry] = useState("");
+
+  const data = [name, phone, subject, enquiry];
+
+  const ContactFormMar = () => {
+    localStorage.setItem("dataKey", JSON.stringify(data));
+  };
+
+  const ContactFormEng = () => {
+    localStorage.setItem("dataKey", JSON.stringify(data));
+  };
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -87,24 +102,41 @@ const Contact = ({ value }) => {
               <ContactCard>
                 <form>
                   <div className="grid">
-                    <input type="text" placeholder="तुमचे नाव" />
-                    <input type="text" placeholder="फोन #" />
-                  </div>
                   <input
                     type="text"
-                    placeholder="विषय"
-                    className="inputMargin"
+                    placeholder="तुमचे नाव"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
                   />
-                  <textarea
-                    name=""
-                    id=""
-                    cols="30"
-                    rows="10"
-                    placeholder="संदेश / प्रश्न"
-                  ></textarea>
-                  <div className="btn2 flex-center">
+                  <input
+                    type="number"
+                    placeholder="फोन #"
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value)}
+                    maxlength="10"
+                    pattern="\d{10}"
+                  />
+                </div>
+                <select onChange={(e) => setSubject(e.target.value)}>
+                  <option>विषय</option>
+                  <option>उपकरण चौकशी</option>
+                  <option>सपोर्ट</option>
+                </select>
+                <select onChange={(e) => setEnquiry(e.target.value)}>
+                  <option>उपकरण चौकशी</option>
+                  {CATEGORIES2.map((item) => {
+                    return <option>{item}</option>;
+                  })}
+                </select>
+                <div onClick={() => ContactFormMar()}>
+                  <ReactWhatsapp
+                    number="7986996229"
+                    message={data}
+                    className="btn2 flex-center"
+                  >
                     आता पाठवा <BsArrowRight className="iconRight" />
-                  </div>
+                  </ReactWhatsapp>
+                </div>
                 </form>
               </ContactCard>
             </>
@@ -153,21 +185,41 @@ const Contact = ({ value }) => {
               <ContactCard>
                 <form>
                   <div className="grid">
-                    <input type="text" placeholder="Your Name" />
-                    <input type="text" placeholder="Email" />
-                    <input type="text" placeholder="Phone #" />
-                    <input type="text" placeholder="Subject" />
-                  </div>
-                  <textarea
-                    name=""
-                    id=""
-                    cols="30"
-                    rows="10"
-                    placeholder="Message / Question"
-                  ></textarea>
-                  <div className="btn2 flex-center">
+                  <input
+                    type="text"
+                    placeholder="Your Name"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                  />
+                  <input
+                    type="text"
+                    placeholder="Phone #"
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value)}
+                    maxlength="10"
+                    pattern="\d{10}"
+                  />
+                </div>
+                <select onChange={(e) => setSubject(e.target.value)}>
+                  <option>Subject</option>
+                  <option>Product Enquiry</option>
+                  <option>Support</option>
+                </select>
+                <select onChange={(e) => setEnquiry(e.target.value)}>
+                  <option>Select Product</option>
+                  {CATEGORIES.map((item) => {
+                    return <option>{item}</option>;
+                  })}
+                </select>
+                <div onClick={() => ContactFormEng()}>
+                  <ReactWhatsapp
+                    number="9325423557"
+                    message={data}
+                    className="btn2 flex-center"
+                  >
                     Send Now <BsArrowRight className="iconRight" />
-                  </div>
+                  </ReactWhatsapp>
+                </div>
                 </form>
               </ContactCard>
             </>
@@ -270,10 +322,16 @@ const ContactCard = styled.div`
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       grid-gap: 2rem;
+      margin-bottom: 1rem;
     }
     input {
       width: 100%;
       height: 62px;
+    }
+    select {
+      width: 100%;
+      height: 62px;
+      margin-bottom: 1rem;
     }
     textarea {
       width: 100%;
