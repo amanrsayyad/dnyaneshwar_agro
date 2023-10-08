@@ -119,6 +119,7 @@ export default EquipmentMain;
 const EquipmentContainer = styled.div`
   position: relative;
   overflow: hidden;
+  padding-top: 12rem;
   .bg {
     position: absolute;
     top: 0%;
@@ -174,7 +175,6 @@ const EquipmentContainer = styled.div`
   .mySwiper {
     z-index: 10;
     margin: 0px 25px;
-    padding-top: 12rem;
     -webkit-user-select: none;
     -webkit-touch-callout: none;
     -moz-user-select: none;
@@ -182,7 +182,6 @@ const EquipmentContainer = styled.div`
     user-select: none;
 
     @media only screen and (max-width: 991px) {
-      padding-top: 17rem;
       margin: 0px 15px;
     }
   }
@@ -223,5 +222,8 @@ const EquipmentContainer = styled.div`
         height: 300px;
       }
     }
+  }
+  @media only screen and (max-width: 991px) {
+    padding-top: 17rem;
   }
 `;
