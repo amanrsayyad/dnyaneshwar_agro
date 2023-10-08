@@ -1,0 +1,127 @@
+@import url("https://fonts.googleapis.com/css2?family=Alice&family=Barlow:wght@100;200;300;400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Barlow", sans-serif;
+}
+:root {
+  --yellow-color: #e2ff6f;
+  --green-color: #0e7202;
+  --black-color: #333;
+  --font-alice: "Alice", serif;
+}
+a {
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+}
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.flex-start {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.hor-start {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.flex-col {
+  flex-direction: column;
+}
+.space-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.btn {
+  margin-top: 25px;
+  padding: 15px 17px;
+  background: #0e7202;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 500;
+  text-transform: uppercase;
+  width: 34%;
+  cursor: pointer;
+  border-radius: 2px;
+}
+.btn .iconRight {
+  font-size: 18px;
+  margin-left: 10px;
+}
+.labelName {
+  color: var(--green-color);
+  font-size: 17px;
+}
+input, select {
+  padding-left: 30px;
+  border: none;
+  outline: none;
+  border-radius: 2px;
+  background-color: #f7f7f7;
+  color: #222;
+  font-size: 18px;
+  font-weight: 400;
+}
+input:focus,
+textarea:focus, select:focus {
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  background-color: #fff;
+}
+textarea {
+  padding-left: 30px;
+  border: none;
+  outline: none;
+  border-radius: 2px;
+  background-color: #f7f7f7;
+  color: #222;
+  font-size: 18px;
+  font-weight: 400;
+  resize: none;
+}
+.btn2 {
+  margin-top: 25px;
+  padding: 15px 17px;
+  border: 1.5px solid #000;
+  color: #000;
+  font-size: 17px;
+  font-weight: 700;
+  text-transform: uppercase;
+  width: 30%;
+  cursor: pointer;
+  border-radius: 2px;
+}
+.btn2 .iconRight {
+  font-size: 18px;
+  margin-left: 10px;
+  color: var(--green-color);
+}
+.btn2:hover {
+  background-color: var(--green-color);
+  color: #fff;
+  border: none;
+}
+.btn2:hover .iconRight {
+  color: #fff;
+}
+.w-100 {
+  width: 100% !important;
+}
+@media only screen and (max-width: 991px) {
+  .btn {
+    width: 175px;
+  }
+  .btn2 {
+    padding: 12px 17px;
+    width: 50%;
+    font-size: 15px;
+    font-weight: 700;
+  }
+}
