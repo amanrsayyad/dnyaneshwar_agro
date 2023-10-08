@@ -5,7 +5,7 @@ import {
   FaFacebookF,
   FaYoutube,
   FaInstagram,
-  IoCallOutline
+  IoCallOutline,
 } from "../utils/Icon";
 
 const TopHeader = ({ value, setValue }) => {
@@ -16,7 +16,7 @@ const TopHeader = ({ value, setValue }) => {
           <div className="icoMain flex-center">
             <AiOutlineMail className="ico" />
           </div>
-          <p>official@dnyaneshwaragro.in</p>
+          <a href="mailto:official@dnyaneshwaragro.in">official@dnyaneshwaragro.in</a>
         </div>
         <div className="mobileBlock">
           <a href="#" target="_blank" className="socialList flex-center">
@@ -52,7 +52,7 @@ const TopHeader = ({ value, setValue }) => {
             <FaInstagram className="ico" />
           </div>
         </a>
-        <select onChange={e => setValue(e.target.value)}>
+        <select onChange={(e) => setValue(e.target.value)}>
           <option>Marathi</option>
           <option>English</option>
         </select>
@@ -108,7 +108,7 @@ const TopHeaderMain = styled.div`
           font-size: 20px;
         }
       }
-      p {
+      a {
         color: #fff;
         font-weight: 500;
         font-size: 17px;
