@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
 import logo from "../assets/logo.png";
 import leaf from "../assets/leaf.png";
 import { HeaderMain } from "../styles/HeaderStyles";
@@ -12,10 +12,25 @@ const Header = ({ value, setValue }) => {
   const toggleIndex = (index) => {
     setIndex(index);
   };
+  useEffect(() => {
+    if (window.location.pathname === "/") {
+      setIndex(1);
+    } else if (window.location.pathname === "/equipment") {
+      setIndex(2);
+    } else if (window.location.pathname === "/solution") {
+      setIndex(3);
+    } else if (window.location.pathname === "/about-us") {
+      setIndex(4);
+    } else if (window.location.pathname === "/contact") {
+      setIndex(5);
+    } else {
+      setIndex(1);
+    }
+  }, []);
   return (
     <>
       <HeaderMain className="space-between">
-        <div className="logoMain"> 
+        <div className="logoMain">
           <div className="logo_container">
             <img src={leaf} alt="" className="logo" />
           </div>
@@ -26,47 +41,47 @@ const Header = ({ value, setValue }) => {
             <ul className="flex-center">
               <li onClick={() => toggleIndex(1)}>
                 {index === 1 ? (
-                  <Link to="/" className="active">
+                  <NavLink to="/" ClassName="active">
                     [ होम ]
-                  </Link>
+                  </NavLink>
                 ) : (
-                  <Link to="/">होम</Link>
+                  <NavLink to="/">होम</NavLink>
                 )}
               </li>
               <li onClick={() => toggleIndex(2)}>
                 {index === 2 ? (
-                  <Link to="/equipment" className="active">
+                  <NavLink to="/equipment" ClassName="active">
                     [ उपकरणे ]
-                  </Link>
+                  </NavLink>
                 ) : (
-                  <Link to="/equipment">उपकरणे</Link>
+                  <NavLink to="/equipment">उपकरणे</NavLink>
                 )}
               </li>
               {/* <li onClick={() => toggleIndex(3)}>
                 {index === 3 ? (
-                  <Link to="/solution" className="active">
+                  <NavLink to="/solution" ClassName="active">
                     [ आमचे उपाय ]
-                  </Link>
+                  </NavLink>
                 ) : (
-                  <Link to="/solution">आमचे उपाय</Link>
+                  <NavLink to="/solution">आमचे उपाय</NavLink>
                 )}
               </li> */}
               <li onClick={() => toggleIndex(4)}>
                 {index === 4 ? (
-                  <Link to="/about-us" className="active">
+                  <NavLink to="/about-us" ClassName="active">
                     [ आमच्या बद्दल महिती ]
-                  </Link>
+                  </NavLink>
                 ) : (
-                  <Link to="/about-us">आमच्या बद्दल महिती</Link>
+                  <NavLink to="/about-us">आमच्या बद्दल महिती</NavLink>
                 )}
               </li>
               <li onClick={() => toggleIndex(5)}>
                 {index === 5 ? (
-                  <Link to="/contact" className="active">
+                  <NavLink to="/contact" ClassName="active">
                     [ संपर्क ]
-                  </Link>
+                  </NavLink>
                 ) : (
-                  <Link to="/contact">संपर्क</Link>
+                  <NavLink to="/contact">संपर्क</NavLink>
                 )}
               </li>
             </ul>
@@ -75,47 +90,47 @@ const Header = ({ value, setValue }) => {
             <ul className="flex-center">
               <li onClick={() => toggleIndex(1)}>
                 {index === 1 ? (
-                  <Link to="/" className="active">
+                  <NavLink to="/" ClassName="active">
                     [ Home ]
-                  </Link>
+                  </NavLink>
                 ) : (
-                  <Link to="/">Home</Link>
+                  <NavLink to="/">Home</NavLink>
                 )}
               </li>
               <li onClick={() => toggleIndex(2)}>
                 {index === 2 ? (
-                  <Link to="/equipment" className="active">
+                  <NavLink to="/equipment" ClassName="active">
                     [ Equipment ]
-                  </Link>
+                  </NavLink>
                 ) : (
-                  <Link to="/equipment">Equipment</Link>
+                  <NavLink to="/equipment">Equipment</NavLink>
                 )}
               </li>
               {/* <li onClick={() => toggleIndex(3)}>
                 {index === 3 ? (
-                  <Link to="/solution" className="active">
+                  <NavLink to="/solution" ClassName="active">
                     [ Our Solution ]
-                  </Link>
+                  </NavLink>
                 ) : (
-                  <Link to="/solution">Our Solution</Link>
+                  <NavLink to="/solution">Our Solution</NavLink>
                 )}
               </li> */}
               <li onClick={() => toggleIndex(4)}>
                 {index === 4 ? (
-                  <Link to="/about-us" className="active">
+                  <NavLink to="/about-us" ClassName="active">
                     [ About ]
-                  </Link>
+                  </NavLink>
                 ) : (
-                  <Link to="/about-us">About</Link>
+                  <NavLink to="/about-us">About</NavLink>
                 )}
               </li>
               <li onClick={() => toggleIndex(5)}>
                 {index === 5 ? (
-                  <Link to="/contact" className="active">
+                  <NavLink to="/contact" ClassName="active">
                     [ Contact ]
-                  </Link>
+                  </NavLink>
                 ) : (
-                  <Link to="/contact">Contact</Link>
+                  <NavLink to="/contact">Contact</NavLink>
                 )}
               </li>
             </ul>
@@ -127,13 +142,7 @@ const Header = ({ value, setValue }) => {
           </div>
         )}
       </HeaderMain>
-      {toogleMenu ? (
-        <MobileMenu
-          setValue={setValue}
-          setToggleMenu={setToggleMenu}
-          value={value}
-        />
-      ) : null}
+      {toogleMenu ? <MobileMenu setValue={setValue} setToggleMenu={setToggleMenu} value={value} /> : null}
     </>
   );
 };
