@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { IoCloseOutline } from "../utils/Icon";
 import { IoMdCall } from "react-icons/io";
@@ -10,6 +10,22 @@ const MobileMenu = ({ setToggleMenu, value, setValue }) => {
   const toggleIndex = (index) => {
     setIndexTab(index);
   };
+  useEffect(() => {
+    if (window.location.pathname === "/") {
+      setIndexTab(1);
+    } else if (window.location.pathname === "/equipment") {
+      setIndexTab(2);
+    } else if (window.location.pathname === "/solution") {
+      setIndexTab(3);
+    } else if (window.location.pathname === "/about-us") {
+      setIndexTab(4);
+    } else if (window.location.pathname === "/contact") {
+      setIndexTab(5);
+    } else {
+      setIndexTab(1);
+    }
+  }, []);
+
   return (
     <MenuContainer>
       <div className="menuCard">
@@ -137,9 +153,7 @@ const MobileMenu = ({ setToggleMenu, value, setValue }) => {
             </li>
             <li>
               <IoIosMail className="iconMail" />
-              <a href="mailto:official@dnyaneshwaragro.in">
-                official@dnyaneshwaragro.in
-              </a>
+              <a href="mailto:official@dnyaneshwaragro.in">official@dnyaneshwaragro.in</a>
             </li>
           </ul>
         </div>
