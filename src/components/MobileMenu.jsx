@@ -1,15 +1,31 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { IoCloseOutline } from "../utils/Icon";
 import { IoMdCall } from "react-icons/io";
 import { IoIosMail } from "react-icons/io";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const MobileMenu = ({ setToggleMenu, value, setValue }) => {
   const [indexTab, setIndexTab] = useState(1);
   const toggleIndex = (index) => {
     setIndexTab(index);
   };
+  useEffect(() => {
+    if (window.location.pathname === "/") {
+      setIndexTab(1);
+    } else if (window.location.pathname === "/equipment") {
+      setIndexTab(2);
+    } else if (window.location.pathname === "/solution") {
+      setIndexTab(3);
+    } else if (window.location.pathname === "/about-us") {
+      setIndexTab(4);
+    } else if (window.location.pathname === "/contact") {
+      setIndexTab(5);
+    } else {
+      setIndexTab(1);
+    }
+  }, []);
+
   return (
     <MenuContainer>
       <div className="menuCard">
@@ -23,47 +39,47 @@ const MobileMenu = ({ setToggleMenu, value, setValue }) => {
             <ul>
               <li onClick={() => toggleIndex(1)}>
                 {indexTab === 1 ? (
-                  <Link to="/" className="active">
+                  <NavLink to="/" ClassName="active">
                     [ होम ]
-                  </Link>
+                  </NavLink>
                 ) : (
-                  <Link to="/">होम</Link>
+                  <NavLink to="/">होम</NavLink>
                 )}
               </li>
               <li onClick={() => toggleIndex(2)}>
                 {indexTab === 2 ? (
-                  <Link to="/equipment" className="active">
+                  <NavLink to="/equipment" ClassName="active">
                     [ उपकरणे ]
-                  </Link>
+                  </NavLink>
                 ) : (
-                  <Link to="/equipment">उपकरणे</Link>
+                  <NavLink to="/equipment">उपकरणे</NavLink>
                 )}
               </li>
               {/* <li onClick={() => toggleIndex(3)}>
                 {indexTab === 3 ? (
-                  <Link to="/solution" className="active">
+                  <NavLink to="/solution" ClassName="active">
                     [ आमचे उपाय ]
-                  </Link>
+                  </NavLink>
                 ) : (
-                  <Link to="/solution">आमचे उपाय</Link>
+                  <NavLink to="/solution">आमचे उपाय</NavLink>
                 )}
               </li> */}
               <li onClick={() => toggleIndex(4)}>
                 {indexTab === 4 ? (
-                  <Link to="/about-us" className="active">
+                  <NavLink to="/about-us" ClassName="active">
                     [ आमच्या बद्दल महिती ]
-                  </Link>
+                  </NavLink>
                 ) : (
-                  <Link to="/about-us">आमच्या बद्दल महिती</Link>
+                  <NavLink to="/about-us">आमच्या बद्दल महिती</NavLink>
                 )}
               </li>
               <li onClick={() => toggleIndex(5)}>
                 {indexTab === 5 ? (
-                  <Link to="/contact" className="active">
+                  <NavLink to="/contact" ClassName="active">
                     [ संपर्क ]
-                  </Link>
+                  </NavLink>
                 ) : (
-                  <Link to="/contact">संपर्क</Link>
+                  <NavLink to="/contact">संपर्क</NavLink>
                 )}
               </li>
             </ul>
@@ -72,47 +88,47 @@ const MobileMenu = ({ setToggleMenu, value, setValue }) => {
             <ul>
               <li onClick={() => toggleIndex(1)}>
                 {indexTab === 1 ? (
-                  <Link to="/" className="active">
+                  <NavLink to="/" ClassName="active">
                     [ Home ]
-                  </Link>
+                  </NavLink>
                 ) : (
-                  <Link to="/">Home</Link>
+                  <NavLink to="/">Home</NavLink>
                 )}
               </li>
               <li onClick={() => toggleIndex(2)}>
                 {indexTab === 2 ? (
-                  <Link to="/equipment" className="active">
+                  <NavLink to="/equipment" ClassName="active">
                     [ Equipment ]
-                  </Link>
+                  </NavLink>
                 ) : (
-                  <Link to="/equipment">Equipment</Link>
+                  <NavLink to="/equipment">Equipment</NavLink>
                 )}
               </li>
               {/* <li onClick={() => toggleIndex(3)}>
                 {indexTab === 3 ? (
-                  <Link to="/solution" className="active">
+                  <NavLink to="/solution" ClassName="active">
                     [ Our Solution ]
-                  </Link>
+                  </NavLink>
                 ) : (
-                  <Link to="/solution">Our Solution</Link>
+                  <NavLink to="/solution">Our Solution</NavLink>
                 )}
               </li> */}
               <li onClick={() => toggleIndex(4)}>
                 {indexTab === 4 ? (
-                  <Link to="/about-us" className="active">
+                  <NavLink to="/about-us" ClassName="active">
                     [ About ]
-                  </Link>
+                  </NavLink>
                 ) : (
-                  <Link to="/about-us">About</Link>
+                  <NavLink to="/about-us">About</NavLink>
                 )}
               </li>
               <li onClick={() => toggleIndex(5)}>
                 {indexTab === 5 ? (
-                  <Link to="/contact" className="active">
+                  <NavLink to="/contact" ClassName="active">
                     [ Contact ]
-                  </Link>
+                  </NavLink>
                 ) : (
-                  <Link to="/contact">Contact</Link>
+                  <NavLink to="/contact">Contact</NavLink>
                 )}
               </li>
             </ul>
@@ -137,9 +153,7 @@ const MobileMenu = ({ setToggleMenu, value, setValue }) => {
             </li>
             <li>
               <IoIosMail className="iconMail" />
-              <a href="mailto:official@dnyaneshwaragro.in">
-                official@dnyaneshwaragro.in
-              </a>
+              <a href="mailto:official@dnyaneshwaragro.in">official@dnyaneshwaragro.in</a>
             </li>
           </ul>
         </div>
